@@ -76,5 +76,25 @@ print(f"{hasil} {hasil2}")
 # make function becomde dictionary
 def fungsi(**kwargs):
     print(kwargs["nama"])
+
 fungsi(nama="denta",tinggi=120, berat=80)
 
+#another benefit using args
+def math(*args,**kwargs):
+    output=0
+    if kwargs['options']=="tambah":
+        print("operasi penambahan")
+        for angka in args:
+            output+=angka
+    elif kwargs['options']=="kali":
+        output=1
+        print("operasi perkalian")
+        for angka in args:
+            output*=angka
+
+    return output
+
+hasil=math(1,2,3,4,5,6,options="tambah")
+hasil2=math(1,2,3,4,5,6,options="kali")
+
+print(f"{hasil} {hasil2}")
